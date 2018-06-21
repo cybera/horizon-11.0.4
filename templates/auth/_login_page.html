@@ -1,6 +1,5 @@
 {% extends 'auth/_login_form.html' %}
 {% load i18n %}
-
 {% block pre_login %}
   <div class="container login">
     <div class="row">
@@ -10,6 +9,9 @@
 
 {% block login_header %}
   {% include 'auth/_splash.html' %}
+  {% if dair_admin_notice %}
+  <p class="alert-dair">{{ dair_admin_notice }}</p>
+  {% endif %}
   {{ block.super }}
 {% endblock %}
 

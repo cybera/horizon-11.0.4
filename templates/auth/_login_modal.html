@@ -5,6 +5,9 @@
   <div class="login modal">
     <div class="modal-dialog">
       <div class="modal-content">
+        {% if dair_admin_notice %}
+        <p class="alert-dair">{{ dair_admin_notice }}</p>
+        {% endif %}
         {{ block.super }}
 {% endblock %}
 
