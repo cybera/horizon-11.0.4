@@ -1368,7 +1368,9 @@ class DataTable(object):
         table_template = template.loader.get_template(self._meta.template)
         extra_context = {self._meta.context_var_name: self,
                          'hidden_title': self._meta.hidden_title}
-        context = template.RequestContext(self.request, extra_context)
+        #context = template.RequestContext(self.request, extra_context)
+        # cm / jt
+        context = template.Context(extra_context)
         return table_template.render(context)
 
     def get_absolute_url(self):
@@ -1517,7 +1519,9 @@ class DataTable(object):
                 extra_context['table_actions_menu'].append(action)
             elif action != extra_context.get('filter'):
                 extra_context['table_actions_buttons'].append(action)
-        context = template.RequestContext(self.request, extra_context)
+        #context = template.RequestContext(self.request, extra_context)
+        # cm / jt / mj
+        context = template.Context(extra_context)
         self.set_multiselect_column_visibility(len(bound_actions) > 0)
         return table_actions_template.render(context)
 
@@ -1535,7 +1539,9 @@ class DataTable(object):
         bound_actions = self.get_row_actions(datum)
         extra_context = {"row_actions": bound_actions,
                          "row_id": self.get_object_id(datum)}
-        context = template.RequestContext(self.request, extra_context)
+        #context = template.RequestContext(self.request, extra_context)
+        # cm / jt / mj
+        context = template.Context(extra_context)
         return row_actions_template.render(context)
 
     @staticmethod
