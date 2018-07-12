@@ -26,7 +26,8 @@ from django.forms import fields
 from django.forms import forms
 from django.forms.utils import flatatt  # noqa
 from django.forms import widgets
-from django.template import Context  # noqa
+# mj / jt - https://review.openstack.org/#/c/476147/
+#from django.template import Context  # noqa
 from django.template.loader import get_template  # noqa
 from django.utils.encoding import force_text
 from django.utils.functional import Promise  # noqa
@@ -262,14 +263,15 @@ class ThemableSelectWidget(SelectWidget):
         id = attrs.pop('id', 'id_%s' % name)
 
         template = get_template('horizon/common/fields/_themable_select.html')
-        context = Context({
+        # mj / jt - https://review.openstack.org/#/c/476147/
+        context = {
             'name': name,
             'options': new_choices,
             'id': id,
             'value': value,
             'initial_value': initial_value,
             'select_attrs': attrs,
-        })
+        }
         return template.render(context)
 
 

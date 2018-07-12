@@ -42,5 +42,5 @@ class Breadcrumb(html.HTMLElement):
         """Renders the table using the template from the table options."""
         breadcrumb_template = template.loader.get_template(self.template)
         extra_context = {"breadcrumb": self}
-        context = template.RequestContext(self.request, extra_context)
-        return breadcrumb_template.render(context)
+        # mj / jt - https://review.openstack.org/#/c/476147/
+        return breadcrumb_template.render(extra_context, self.request)

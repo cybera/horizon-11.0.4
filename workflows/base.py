@@ -181,8 +181,8 @@ class Action(forms.Form):
         extra_context = extra_context or {}
         if self.help_text_template:
             tmpl = template.loader.get_template(self.help_text_template)
-            context = template.RequestContext(self.request, extra_context)
-            text += tmpl.render(context)
+            # mj / jt - https://review.openstack.org/#/c/476147/
+            text += tmpl.render(extra_context, self.request)
         else:
             text += linebreaks(force_text(self.help_text))
         return safe(text)
