@@ -45,7 +45,7 @@
   <font size="5"> {% trans "DAIR weekly maintenance is every Tuesday " %}
     <a href="https://savvytime.com/converter/est-to-ast-cst-mst-pst-nst"> {% trans "18:00-20:00 EST." %} </a> </font>
   <br><br>
-  <strong>DAIR Use Agreement expires {{ usage.limits.expiration }}</strong>
+  <strong>{% trans "DAIR Use Agreement expires " %} {{ usage.limits.expiration }}</strong>
   {% if usage.limits.dair_notice %}
   <br><br>
   <strong>DAIR Notice: </strong>
