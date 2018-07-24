@@ -250,6 +250,51 @@ msgid "Message json file '%(path)s' is malformed. %(exception)s"
 msgstr ""
 "Le format du fichier de message json '%(path)s'  est incorrect. %(exception)s"
 
+#, python-format
+msgid "Used <span> %(used)s </span> of <span> %(available)s </span>"
+msgstr " <span> %(used)s </span> utilisé(es) sur <span> %(available)s </span>"
+
+#: templates/horizon/common/_limit_summary.html:14
+msgid "VCPUs"
+msgstr "VCPUs"
+
+#: templates/horizon/common/_limit_summary.html:21
+msgid "RAM"
+msgstr "RAM"
+
+#: templates/horizon/common/_limit_summary.html:28
+msgid "Floating IPs"
+msgstr "IP flottantes"
+
+#: templates/horizon/common/_limit_summary.html:35
+msgid "Security Groups"
+msgstr "Groupes de Sécurité"
+
+#: templates/horizon/common/_limit_summary.html:42
+msgid "Volumes"
+msgstr "Volumes"
+
+#: templates/horizon/common/_limit_summary.html:49
+msgid "Volume Storage"
+msgstr "Stockage de volumes"
+
+#: templates/horizon/common/_limit_summary.html:59
+msgid "Images / Snapshots"
+msgstr ""
+
+#: templates/horizon/common/_limit_summary.html:66
+#, fuzzy
+msgid "Object Storage"
+msgstr "Stockage de volumes"
+
+#: templates/horizon/common/_limit_summary.html:75
+msgid "DAIR weekly maintenance is every Tuesday "
+msgstr "La maintenance de routine de l’ATIR a lieu chaque mardi, "
+
+#: templates/horizon/common/_limit_summary.html:76
+msgid "18:00-20:00 EST."
+msgstr "de 18 h à 20 h (HE)."
+
 msgid "More Actions"
 msgstr "Plus d'actions"
 
